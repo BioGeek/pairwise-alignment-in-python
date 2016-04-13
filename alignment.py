@@ -21,7 +21,7 @@ space = '    ' # should be as long as your group of characters
 def match_score(alpha, beta):
     if alpha == beta:
         return match_award
-    elif alpha == gap or beta == '-----':
+    elif alpha == gap or beta == gap:
         return gap_penalty
     else:
         return mismatch_penalty
