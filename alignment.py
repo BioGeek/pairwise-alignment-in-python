@@ -51,8 +51,8 @@ def finalize(align1, align2):
             found = 0
     
         #if one of them is a gap, output a space
-        elif align1[i] == '-----' or align2[i] == '-----':
-            symbol.append('     ')
+        elif align1[i] == gap or align2[i] == gap:
+            symbol.append(space)
             score += gap_penalty
     
     identity = float(identity) / len(align1) * 100
@@ -108,10 +108,10 @@ def needle(seq1, seq2):
     # Finish tracing up to the top left cell
     while i > 0:
         align1.append(seq1[i-1])
-        align2.append('-----')
+        align2.append(gap)
         i -= 1
     while j > 0:
-        align1.append('-----')
+        align1.append(gap)
         align2.append(seq2[j-1])
         j -= 1
 
